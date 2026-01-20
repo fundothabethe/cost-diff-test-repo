@@ -17,11 +17,11 @@ Resources:
       SubnetId: !Ref PublicSubnet
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
-      Tags:
-        - Key: Name
-          Value: !Sub "${Environment}-web-server"
-        - Key: Environment
-          Value: !Ref Environment
+      # Tags:
+      #   - Key: Name
+      #     Value: !Sub "${Environment}-web-server"
+      #   - Key: Environment
+      #     Value: !Ref Environment
 
   # Database Instance
   DatabaseInstance:
