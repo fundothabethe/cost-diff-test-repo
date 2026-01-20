@@ -1,0 +1,47 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.6.0",
+  "resource_changes": [
+    {
+      "address": "aws_instance.old_server",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "old_server",
+      "change": {
+        "actions": ["delete"],
+        "before": {
+          "instance_type": "t3.large",
+          "ami": "ami-0abcdef1234567890"
+        },
+        "after": null
+      }
+    },
+    {
+      "address": "aws_nat_gateway.unused",
+      "mode": "managed",
+      "type": "aws_nat_gateway",
+      "name": "unused",
+      "change": {
+        "actions": ["delete"],
+        "before": {
+          "connectivity_type": "public"
+        },
+        "after": null
+      }
+    },
+    {
+      "address": "aws_ebs_volume.cleanup",
+      "mode": "managed",
+      "type": "aws_ebs_volume",
+      "name": "cleanup",
+      "change": {
+        "actions": ["delete"],
+        "before": {
+          "size": 200,
+          "type": "gp3"
+        },
+        "after": null
+      }
+    }
+  ]
+}
