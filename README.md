@@ -30,5 +30,3 @@ This repository is set up to test the Cost Diff Bot GitHub App.
 ✅ Sets "Cost Diff" Check Run status  
 ✅ Updates comment when PR changes
 ✅ Respects policy thresholds in `.costbot.yml`
-
-dfdg
