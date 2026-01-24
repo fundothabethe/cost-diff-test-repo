@@ -2,7 +2,7 @@
 
 This repository is set up to test the Cost Diff Bot GitHub App.
 
-**Testing timestamp:** 2026-01-24 10:44 (Testing after enabling PR events)
+**Testing timestamp:** 2026-01-24 17:41 (Testing with debug logging)
 
 ## Test Files
 
