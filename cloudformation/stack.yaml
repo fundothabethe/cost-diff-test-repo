@@ -1,6 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "Test CloudFormation stack for Cost Diff Bot analysis"
-# Testing webhook delivery - iteration 1
+Description: "Test CloudFormation stack for Cost Diff Bot analysis - FIXED UPDATE LOGIC"
 
 Parameters:
   Environment:
@@ -82,6 +81,21 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${Environment}-nat-eip"
+
+  # NEW: Additional EC2 Instance for CloudFormation Cost Testing
+  TestInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.xlarge
+      ImageId: ami-0abcdef1234567890
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds:
+        - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: !Sub "${Environment}-test-instance"
+        - Key: Environment
+          Value: !Ref Environment
 
   # VPC Infrastructure (for completeness)
   VPC:

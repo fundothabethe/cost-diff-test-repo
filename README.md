@@ -2,7 +2,7 @@
 
 This repository is set up to test the Cost Diff Bot GitHub App.
 
-**Testing timestamp:** 2026-01-24 10:44 (Testing after enabling PR events)
+**Testing timestamp:** 2026-01-24 18:40 (Fixed CloudFormation YAML parsing with intrinsic functions)
 
 ## Test Files
 
@@ -30,3 +30,6 @@ This repository is set up to test the Cost Diff Bot GitHub App.
 ✅ Sets "Cost Diff" Check Run status  
 ✅ Updates comment when PR changes
 ✅ Respects policy thresholds in `.costbot.yml`
+
+forward traffic:
+npx smee -u https://smee.io/HIqH0PxNaezRNlw -t http://127.0.0.1:3000/api/github/webhooks
