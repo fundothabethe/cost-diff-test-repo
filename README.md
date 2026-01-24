@@ -2,7 +2,7 @@
 
 This repository is set up to test the Cost Diff Bot GitHub App.
 
-**Testing timestamp:** 2026-01-24 18:37 (Debug CloudFormation parsing error)
+**Testing timestamp:** 2026-01-24 18:40 (Fixed CloudFormation YAML parsing with intrinsic functions)
 
 ## Test Files
 
