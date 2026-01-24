@@ -2,7 +2,7 @@
 
 This repository is set up to test the Cost Diff Bot GitHub App.
 
-**Testing timestamp:** 2026-01-24 10:40 (Testing correct webhook endpoint)
+**Testing timestamp:** 2026-01-24 10:44 (Testing after enabling PR events)
 
 ## Test Files
 

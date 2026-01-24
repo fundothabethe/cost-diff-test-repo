@@ -27,7 +27,7 @@
     },
     {
       "address": "aws_ebs_volume.data",
-      "mode": "managed", 
+      "mode": "managed",
       "type": "aws_ebs_volume",
       "name": "data",
       "provider_name": "registry.terraform.io/hashicorp/aws",
