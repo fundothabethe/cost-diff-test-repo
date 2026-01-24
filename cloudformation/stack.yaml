@@ -1,6 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Test CloudFormation stack for Cost Diff Bot analysis"
-# CLOUDFORMATION TEST - Testing CFN cost analysis (FRESH WEBHOOK)
 
 Parameters:
   Environment:
