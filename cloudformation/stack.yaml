@@ -82,6 +82,21 @@ Resources:
         - Key: Name
           Value: !Sub "${Environment}-nat-eip"
 
+  # NEW: Additional EC2 Instance for CloudFormation Cost Testing
+  TestInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.large
+      ImageId: ami-0abcdef1234567890
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds:
+        - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: !Sub "${Environment}-test-instance"
+        - Key: Environment
+          Value: !Ref Environment
+
   # VPC Infrastructure (for completeness)
   VPC:
     Type: AWS::EC2::VPC
