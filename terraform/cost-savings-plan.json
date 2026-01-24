@@ -37,7 +37,7 @@
       "change": {
         "actions": ["delete"],
         "before": {
-          "size": 200,
+          "size": 100,
           "type": "gp3"
         },
         "after": null
