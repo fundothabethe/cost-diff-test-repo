@@ -86,7 +86,7 @@ Resources:
   TestInstance:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: t3.large
+      InstanceType: t3.xlarge
       ImageId: ami-0abcdef1234567890
       SubnetId: !Ref PublicSubnet
       SecurityGroupIds:
