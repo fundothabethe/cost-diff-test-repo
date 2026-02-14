@@ -2,17 +2,28 @@
 
 This repository is set up to test the Cost Diff Bot GitHub App.
 
-**Testing timestamp:** 2026-01-24 10:44 (Testing after enabling PR events)
+**Testing timestamp:** 2026-01-30 (Production readiness testing with ap-southeast-1 pricing)
 
-## Test Files
+## Current Test Infrastructure (ap-southeast-1)
 
-### Terraform Test
-- `terraform/plan.json` - Contains a Terraform plan with EC2 and EBS resources
-- Expected result: Bot should calculate costs for t3.small instance + 100GB GP3 volume
+### Test Scenario: Production Web Application Stack
+This repository contains a realistic Terraform configuration for testing cost analysis:
 
-### CloudFormation Test  
-- `cloudformation/stack.yaml` - Contains CFN template with multiple AWS resources
-- Expected result: Bot should analyze resource changes between template versions
+**Infrastructure Components:**
+- **2x EC2 t3.medium instances** (web servers)  
+- **1x NAT Gateway** (for private subnet access)
+- **1x EBS GP3 volume** (100GB with 4000 IOPS, 200MB/s throughput)
+- **1x RDS PostgreSQL db.t3.small** (database)
+- **VPC with public/private subnets** (networking)
+
+**Expected Monthly Costs (ap-southeast-1):**
+- EC2 (2x t3.medium): ~$74.68
+- NAT Gateway: ~$35.04  
+- EBS GP3 (100GB): ~$8.80
+- RDS (db.t3.small): ~$19.69
+- **Total: ~$138.21/month**
+
+*Note: ap-southeast-1 costs are ~17.9% higher than us-east-1*
 
 ### Configuration
 - `.costbot.yml` - Bot configuration with custom thresholds for testing
@@ -30,3 +41,10 @@ This repository is set up to test the Cost Diff Bot GitHub App.
 ✅ Sets "Cost Diff" Check Run status  
 ✅ Updates comment when PR changes
 ✅ Respects policy thresholds in `.costbot.yml`
+
+
+githgub app
+forward traffic:
+npx smee -u https://smee.io/HIqH0PxNaezRNlw -t http://127.0.0.1:3000/api/github/webhooks
+
+xdshgdjyfj
