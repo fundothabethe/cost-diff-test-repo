@@ -1,45 +1,45 @@
-# Cost Diff Bot Configuration
-# Place this file in the root of your repository as .costbot.yml
+# # Cost Diff Bot Configuration
+# # Place this file in the root of your repository as .costbot.yml
 
-# Currency for cost reporting
-currency: USD
+# # Currency for cost reporting
+# currency: USD
 
-# Default path to look for Terraform plan files
-planPath: terraform/plan.json
+# # Default path to look for Terraform plan files
+# planPath: terraform/plan.json
 
-# Cost thresholds for policy enforcement
-threshold:
-  warn_if_over: 10 # Warn if monthly cost change > $10
-  fail_if_over: 25 # Fail if monthly cost change > $25
+# # Cost thresholds for policy enforcement
+# threshold:
+#   warn_if_over: 10 # Warn if monthly cost change > $10
+#   fail_if_over: 25 # Fail if monthly cost change > $25
 
-# Services to include/exclude from analysis
-services:
-  include:
-    - ec2
-    - ebs
-    - rds
-    - nat_gateway
-    - s3
-    - lambda
-  ignore: [] # Services to skip
+# # Services to include/exclude from analysis
+# services:
+#   include:
+#     - ec2
+#     - ebs
+#     - rds
+#     - nat_gateway
+#     - s3
+#     - lambda
+#   ignore: [] # Services to skip
 
-# Resource caps to prevent unrealistic cost estimates
-caps:
-  ec2:
-    max_instance_hourly: 0.20 # Cap EC2 instance cost estimates
-  ebs:
-    gp3:
-      max_iops: 3000 # Cap GP3 IOPS for cost calc
-      max_throughput_mb_s: 250 # Cap GP3 throughput
-  rds:
-    max_instance_hourly: 0.50 # Cap RDS instance cost estimates
+# # Resource caps to prevent unrealistic cost estimates
+# caps:
+#   ec2:
+#     max_instance_hourly: 0.20 # Cap EC2 instance cost estimates
+#   ebs:
+#     gp3:
+#       max_iops: 3000 # Cap GP3 IOPS for cost calc
+#       max_throughput_mb_s: 250 # Cap GP3 throughput
+#   rds:
+#     max_instance_hourly: 0.50 # Cap RDS instance cost estimates
 
-# Exemptions (optional - not implemented in current version)
-exemptions:
-  paths: [] # Exempt specific file paths
-  labels: [] # Exempt PRs with certain labels
-  commit_flags: # Exempt commits with flags in message
-    - "cost-allow:"
+# # Exemptions (optional - not implemented in current version)
+# exemptions:
+#   paths: [] # Exempt specific file paths
+#   labels: [] # Exempt PRs with certain labels
+#   commit_flags: # Exempt commits with flags in message
+#     - "cost-allow:"
 
-# Optional: Slack webhook for notifications
-# slackWebhook: https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
+# # Optional: Slack webhook for notifications
+# # slackWebhook: https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
